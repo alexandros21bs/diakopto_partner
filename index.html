@@ -951,6 +951,66 @@
                 padding: 2rem;
             }
         }
+        /* Crossfade Slideshow */
+        .crossfade-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: crossfadeAnim 8s infinite;
+        }
+
+        .crossfade-img:nth-child(1) {
+            position: relative;
+            animation-delay: 0s;
+        }
+
+        .crossfade-img:nth-child(2) {
+            animation-delay: 4s;
+        }
+
+        @keyframes crossfadeAnim {
+            0%, 40% { opacity: 1; }
+            50%, 90% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .crossfade-img-4 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: crossfadeAnim4 12s infinite;
+        }
+
+        .crossfade-img-4:nth-child(1) {
+            position: relative;
+            animation-delay: 0s;
+        }
+
+        .crossfade-img-4:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        .crossfade-img-4:nth-child(3) {
+            animation-delay: 6s;
+        }
+
+        .crossfade-img-4:nth-child(4) {
+            animation-delay: 9s;
+        }
+
+        @keyframes crossfadeAnim4 {
+            0%, 20% { opacity: 1; }
+            25%, 95% { opacity: 0; }
+            100% { opacity: 1; }
+        }
 
         /* Animations */
         .fade-up {
@@ -1059,7 +1119,7 @@
 
             <div class="showcase-grid fade-up">
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-odontotos.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/odontotos1950-b572e483.jpeg');">
                     </div>
                     <div class="showcase-content">
                         <h4>Οδοντωτός Σιδηρόδρομος</h4>
@@ -1069,7 +1129,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-vouraikos.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/far.jpg');">
                     </div>
                     <div class="showcase-content">
                         <h4>Φαράγγι Βουραϊκού</h4>
@@ -1079,7 +1139,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-beaches.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/alexa_paralia.jpg');">
                     </div>
                     <div class="showcase-content">
                         <h4>Παραλίες & Θάλασσα</h4>
@@ -1089,7 +1149,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-villages.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/DJI_0029-scaled.jpg');">
                     </div>
                     <div class="showcase-content">
                         <h4>Χωριά & Τοπικές Διαδρομές</h4>
@@ -1099,7 +1159,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-food.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/caption (1).jpg');">
                     </div>
                     <div class="showcase-content">
                         <h4>Γαστρονομία & Εστίαση</h4>
@@ -1109,7 +1169,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-hotels.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/alex_katalyma1.avif');">
                     </div>
                     <div class="showcase-content">
                         <h4>Διαμονή & Φιλοξενία</h4>
@@ -1119,7 +1179,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-products.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/alexa_topika-proionta.webp');">
                     </div>
                     <div class="showcase-content">
                         <h4>Τοπικά Προϊόντα</h4>
@@ -1129,7 +1189,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-culture.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/DIAKOPTO-MAKE-A-WISH-2026-01-780x445.jpg');">
                     </div>
                     <div class="showcase-content">
                         <h4>Πολιτισμός & Εκδηλώσεις</h4>
@@ -1139,7 +1199,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-religious.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/mega.jpg');">
                     </div>
                     <div class="showcase-content">
                         <h4>Θρησκευτικός Τουρισμός</h4>
@@ -1150,7 +1210,7 @@
 
                 <div class="showcase-card">
                     <div class="showcase-img"
-                        style="background-image: url('assets/images/placeholder-activities.jpg');"></div>
+                        style="background-image: url('assets/images/554195941_10236375311110147_3408394053545198363_n.jpg');"></div>
                     <div class="showcase-content">
                         <h4>Εμπειρίες & Δραστηριότητες</h4>
                         <p>Πεζοπορία, ποδηλασία, φωτογραφικές εξορμήσεις, οικογενειακές δραστηριότητες, θεματικές
@@ -1159,7 +1219,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-business.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/γιοβας.jpg');">
                     </div>
                     <div class="showcase-content">
                         <h4>Τοπικές Επιχειρήσεις</h4>
@@ -1169,7 +1229,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-stories.jpg');">
+                    <div class="showcase-img" style="background-image: url('assets/images/papa.webp');">
                     </div>
                     <div class="showcase-content">
                         <h4>Ιστορίες του Τόπου</h4>
@@ -1196,24 +1256,24 @@
                     <p>Κεντρικός τουριστικός οδηγός και hub συνεργασιών.</p>
                 </div>
                 <div class="domain-card">
+                    <h4>visitdiakopto.gr</h4>
+                    <p>Η βασική πύλη τουριστικής προβολής και ενημέρωσης για τον προορισμό.</p>
+                </div>
+                <div class="domain-card">
                     <h4>visit-diakopto.gr</h4>
                     <p>Καμπάνιες επισκεψιμότητας, social landing pages και προωθητικές ενέργειες.</p>
                 </div>
                 <div class="domain-card">
-                    <h4>odontotos.gr</h4>
-                    <p>Εξειδικευμένο project για τον Οδοντωτό και τη μοναδική του εμπειρία.</p>
+                    <h4>mydiakopto.gr</h4>
+                    <p>Τοπική κοινότητα, προσωποποιημένες εμπειρίες και νέα της περιοχής.</p>
                 </div>
                 <div class="domain-card">
-                    <h4>vouraikos.gr</h4>
-                    <p>Ανάδειξη του φαραγγιού, της φύσης, των διαδρομών και του εναλλακτικού τουρισμού.</p>
+                    <h4>diakoptoguide.gr</h4>
+                    <p>Εξειδικευμένος επαγγελματικός και αναλυτικός τουριστικός οδηγός.</p>
                 </div>
                 <div class="domain-card">
-                    <h4>digitalachaia.gr</h4>
-                    <p>Ομπρέλα προβολής για πολιτιστικά και τουριστικά projects της Αχαΐας.</p>
-                </div>
-                <div class="domain-card">
-                    <h4>webhostpro.gr</h4>
-                    <p>Τεχνική υλοποίηση, φιλοξενία, ανάπτυξη, διαχείριση και digital marketing.</p>
+                    <h4>eshop-diakopto.gr <span style="font-size: 0.8em; font-weight: normal; opacity: 0.8;">(μελλοντικά)</span></h4>
+                    <p>Ψηφιακό marketplace τοπικών προϊόντων και παραγωγών.</p>
                 </div>
             </div>
         </div>
@@ -1276,7 +1336,11 @@
                     </div>
                 </div>
                 <div class="about-image fade-up" style="direction: ltr;">
-                    <img src="assets/images/alexa_topika-proionta.webp" alt="Τοπικά Προϊόντα Αιγιάλειας">
+                    <img src="assets/images/top1.jpg" alt="Marketplace εικόνα 1" class="crossfade-img-4">
+                    <img src="assets/images/top2.jpg" alt="Marketplace εικόνα 2" class="crossfade-img-4">
+                    <img src="assets/images/top3.jpg" alt="Marketplace εικόνα 3" class="crossfade-img-4">
+                    <img src="assets/images/top5.jpg" alt="Marketplace εικόνα 4" class="crossfade-img-4">
+                    <img src="assets/images/γιο.jpg" alt="Marketplace εικόνα 5" class="crossfade-img-4">
                 </div>
             </div>
         </div>
@@ -1297,7 +1361,8 @@
                         θεματικές καμπάνιες όπως «Γεύσεις του Διακοπτού».</p>
                 </div>
                 <div class="about-image fade-up">
-                    <img src="assets/images/dining.png" alt="Εστιατόρια και Ταβέρνες στο Διακοπτό">
+                    <img src="assets/images/caption (2).jpg" alt="Εστιατόρια και Ταβέρνες στο Διακοπτό" class="crossfade-img">
+                    <img src="assets/images/tavern.jpg" alt="Ταβέρνες στο Διακοπτό" class="crossfade-img">
                 </div>
             </div>
         </div>
@@ -1317,7 +1382,10 @@
                         εποχικές καμπάνιες και συνεργασίες με εστίαση, δραστηριότητες και τοπικά προϊόντα.</p>
                 </div>
                 <div class="about-image fade-up" style="direction: ltr;">
-                    <img src="assets/images/accommodation.png" alt="Διαμονή και Ξενοδοχεία στο Διακοπτό">
+                    <img src="assets/images/hotel-panorama.jpg" alt="Διαμονή και Ξενοδοχεία στο Διακοπτό" class="crossfade-img-4">
+                    <img src="assets/images/alk.jpg" alt="Καταλύματα στο Διακοπτό" class="crossfade-img-4">
+                    <img src="assets/images/pano.jpg" alt="Ξενοδοχεία στο Διακοπτό" class="crossfade-img-4">
+                    <img src="assets/images/lemon.jpg" alt="Βίλες και Ξενώνες" class="crossfade-img-4">
                 </div>
             </div>
         </div>
@@ -1338,7 +1406,10 @@
                         Google, social media και καμπάνιες χορηγών.</p>
                 </div>
                 <div class="about-image fade-up">
-                    <img src="assets/images/attractions.png" alt="Αξιοθέατα και Οδοντωτός Βουραϊκού">
+                    <img src="assets/images/attractions.png" alt="Αξιοθέατα και Οδοντωτός Βουραϊκού" class="crossfade-img-4">
+                    <img src="assets/images/caption (1)α.jpg" alt="Αξιοθέατα του τόπου" class="crossfade-img-4">
+                    <img src="assets/images/caption.jpg" alt="Περισσότερα αξιοθέατα" class="crossfade-img-4">
+                    <img src="assets/images/511280616_10235132882850217_7204849424904857529_n.jpg" alt="Εμπειρίες και δραστηριότητες" class="crossfade-img-4">
                 </div>
             </div>
         </div>
@@ -1626,7 +1697,7 @@
                     </ul>
                 </div>
                 <div class="about-image fade-up">
-                    <img src="assets/images/placeholder-sponsorship.jpg"
+                    <img src="assets/images/γιοβας.jpg"
                         alt="Συνεργασίες και Χορηγίες Discover Diakopto">
                 </div>
             </div>
