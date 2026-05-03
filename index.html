@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Diakopto | Πρόταση Συνεργασιών & Χορηγιών</title>
+    <meta name="description"
+        content="Παρουσίαση του Discover Diakopto ως ολοκληρωμένου τουριστικού οδηγού και digital ecosystem για προβολή επιχειρήσεων, παραγωγών, φορέων και χορηγών στο Διακοπτό και την Αιγιάλεια.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E3A5F;
+            --primary-dark: #12243d;
+            --secondary: #C89B3C;
+            --secondary-light: #e6b64f;
+            --earth: #7A6A4F;
+            --green: #526B4A;
+            --sea: #2E6F89;
+            --bg-light: #F7F7F7;
+            --bg-warm: #F3EFE7;
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-gold {
+            color: var(--secondary);
+        }
+
+        .text-white {
+            color: var(--white);
+        }
+
+        .muted {
+            color: var(--text-light);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        header.scrolled {
+            background: rgba(30, 58, 95, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.4rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            font-size: 0.92rem;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(200, 155, 60, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(200, 155, 60, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .btn-dark {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-dark:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(30, 58, 95, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 9rem 0 5rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/images/hero_diakopto.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+            transform: scale(1.05);
+            animation: kenburns 20s ease-out infinite alternate;
+        }
+
+        @keyframes kenburns {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(18, 36, 61, 0.94) 0%, rgba(30, 58, 95, 0.72) 45%, rgba(30, 58, 95, 0.28) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            color: var(--white);
+            max-width: 930px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.55rem 1rem;
+            background: rgba(200, 155, 60, 0.16);
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(2.7rem, 6vw, 5.4rem);
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-title span {
+            color: var(--secondary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            opacity: 0.92;
+            max-width: 760px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 4rem;
+            max-width: 1000px;
+        }
+
+        .hero-stat {
+            padding: 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-stat strong {
+            display: block;
+            color: var(--secondary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.7rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .hero-stat span {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.92rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 7rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.9rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .bg-white {
+            background-color: var(--white);
+        }
+
+        .bg-warm {
+            background-color: var(--bg-warm);
+        }
+
+        /* About Ecosystem */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            min-height: 360px;
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.12), rgba(200, 155, 60, 0.15));
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(30, 58, 95, 0.35), transparent);
+            pointer-events: none;
+        }
+
+        .about-content h3 {
+            font-size: clamp(1.8rem, 3vw, 2.35rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.35rem;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Domains */
+        .domains-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .domain-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 17px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .domain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transition: var(--transition);
+            transform-origin: left;
+        }
+
+        .domain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .domain-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .domain-card h4 {
+            font-size: 1.16rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .domain-card p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+        }
+
+        /* Services / Pillars */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .pillar-card {
+            background: var(--bg-light);
+            padding: 3rem 2rem;
+            border-radius: 22px;
+            text-align: center;
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .pillar-card:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px);
+        }
+
+        .pillar-icon {
+            width: 82px;
+            height: 82px;
+            background: rgba(30, 58, 95, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.45rem;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .pillar-card:hover .pillar-icon {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .pillar-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-card p {
+            color: var(--text-light);
+            font-size: 0.97rem;
+        }
+
+        /* Showcase */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .showcase-card {
+            background: var(--white);
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .showcase-img {
+            height: 185px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .showcase-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(18, 36, 61, 0.6), transparent);
+        }
+
+        .showcase-content {
+            padding: 1.5rem;
+        }
+
+        .showcase-content h4 {
+            font-size: 1.23rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .showcase-content p {
+            color: var(--text-light);
+            font-size: 0.94rem;
+        }
+
+        /* Highlights */
+        .highlight-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            background: rgba(30, 58, 95, 0.06);
+            border: 1px solid rgba(30, 58, 95, 0.08);
+            border-radius: 18px;
+            padding: 1.4rem;
+        }
+
+        .highlight-item strong {
+            display: block;
+            color: var(--primary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .highlight-item span {
+            color: var(--text-light);
+            font-size: 0.92rem;
+        }
+
+        /* Capabilities & Benefits */
+        .capabilities-wrapper {
+            background: radial-gradient(circle at top left, rgba(200, 155, 60, 0.22), transparent 28%), linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            border-radius: 30px;
+            padding: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capabilities-wrapper .section-title {
+            color: var(--white);
+        }
+
+        .cap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .cap-item h4 {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cap-item ul {
+            list-style: none;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .cap-item ul li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .cap-item ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+
+        /* Development Strategy & Revenue */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .strategy-box {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 22px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary);
+        }
+
+        .strategy-box.gold-border {
+            border-left-color: var(--secondary);
+        }
+
+        .strategy-box h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Sponsorship */
+        .sponsor-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .sponsor-card {
+            background: var(--white);
+            border-radius: 22px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sponsor-card.featured {
+            background: linear-gradient(180deg, #ffffff 0%, #fff8e8 100%);
+            border: 1px solid rgba(200, 155, 60, 0.35);
+            box-shadow: var(--shadow-md);
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sponsor-tag {
+            display: inline-block;
+            background: rgba(200, 155, 60, 0.14);
+            color: var(--secondary);
+            border: 1px solid rgba(200, 155, 60, 0.35);
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sponsor-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .sponsor-card p {
+            color: var(--text-light);
+            font-size: 0.94rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .sponsor-card ul {
+            list-style: none;
+        }
+
+        .sponsor-card li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.7rem;
+            font-size: 0.92rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .sponsor-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .deliverable-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 20px;
+            padding: 1.8rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .deliverable-card h4 {
+            color: var(--secondary);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .timeline-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .timeline-card span {
+            display: inline-flex;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: var(--white);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-card h4 {
+            font-size: 1.18rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-card p {
+            color: var(--text-light);
+            font-size: 0.93rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(30, 58, 95, 0.86), rgba(18, 36, 61, 0.94)), url('assets/images/alexa_paralia.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 6rem 0;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-box {
+            display: inline-grid;
+            gap: 0.45rem;
+            background: rgba(255, 255, 255, 0.09);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 20px;
+            padding: 1.2rem 1.6rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-box strong {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a1422;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem 1.6rem;
+            margin: 2rem 0;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+
+            .pillars-grid,
+            .cap-grid,
+            .deliverables-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .showcase-grid,
+            .sponsor-grid,
+            .timeline,
+            .hero-stats,
+            .highlight-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 8rem 0 4rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .about-grid,
+            .strategy-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .pillars-grid,
+            .cap-grid,
+            .deliverables-grid,
+            .showcase-grid,
+            .sponsor-grid,
+            .timeline,
+            .hero-stats,
+            .highlight-strip {
+                grid-template-columns: 1fr;
+            }
+
+            .capabilities-wrapper {
+                padding: 3rem 1.4rem;
+                border-radius: 22px;
+            }
+
+            section {
+                padding: 5rem 0;
+            }
+
+            .strategy-box,
+            .sponsor-card {
+                padding: 2rem;
+            }
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container nav-container">
+            <div class="logo">Discover<span>Diakopto</span></div>
+            <nav class="nav-links">
+                <a href="#about">Το Όραμα</a>
+                <a href="#promotes">Τι Προβάλλει</a>
+                <a href="#ecosystem">Οικοσύστημα</a>
+                <a href="#sponsors">Χορηγίες</a>
+                <a href="#strategy">Στρατηγική</a>
+            </nav>
+            <a href="#contact" class="btn btn-primary"
+                style="padding: 0.65rem 1.5rem; font-size: 0.82rem;">Συνεργασια</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content fade-up visible">
+                <div class="hero-badge">Project Presentation για Συνεργασίες & Χορηγίες</div>
+                <h1 class="hero-title">Το Διακοπτό αποκτά τη δική του <span>ψηφιακή πύλη προβολής</span>.</h1>
+                <p class="hero-subtitle">Το Discover Diakopto είναι ένας ολοκληρωμένος τουριστικός οδηγός και τοπικό
+                    digital ecosystem που προβάλλει τον τόπο, τις επιχειρήσεις, τους παραγωγούς, τον Οδοντωτό, τον
+                    Βουραϊκό και τις αυθεντικές εμπειρίες της Αιγιάλειας.</p>
+                <div class="hero-actions">
+                    <a href="#promotes" class="btn btn-primary">Τι θα Προβάλλει</a>
+                    <a href="#sponsors" class="btn btn-outline">Ευκαιρίες Χορηγίας</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>1</strong>
+                        <span>κεντρικός τουριστικός οδηγός για το Διακοπτό</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>4+</strong>
+                        <span>θεματικά digital projects & domains</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>360°</strong>
+                        <span>προβολή επιχειρήσεων, εμπειριών και προϊόντων</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>B2B</strong>
+                        <span>μοντέλο συνεργασιών, χορηγιών και τοπικής ανάπτυξης</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-white">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content fade-up">
+                    <div class="hero-badge" style="color: var(--primary); border-color: var(--primary);">Τι είναι το
+                        Discover Diakopto</div>
+                    <h3>Δεν είναι απλά ένα site.<br>Είναι ένα <span class="text-gold">Τοπικό Digital Hub</span>.</h3>
+                    <p>Το <strong>Discover Diakopto</strong> δημιουργείται ως το κεντρικό σημείο ψηφιακής πληροφόρησης
+                        και προβολής για το Διακοπτό και την ευρύτερη περιοχή. Στόχος του είναι να συγκεντρώνει όσα
+                        χρειάζεται ένας επισκέπτης πριν, κατά τη διάρκεια και μετά το ταξίδι του.</p>
+                    <p>Παράλληλα, λειτουργεί ως εργαλείο ανάπτυξης για τις τοπικές επιχειρήσεις, τους παραγωγούς, τους
+                        επαγγελματίες του τουρισμού, τους πολιτιστικούς φορείς και τους χορηγούς που θέλουν να συνδεθούν
+                        με την ταυτότητα και την προοπτική της περιοχής.</p>
+
+                    <ul class="feature-list">
+                        <li>Ολοκληρωμένος τουριστικός οδηγός για επισκέπτες</li>
+                        <li>Προβολή καταλυμάτων, εστίασης, υπηρεσιών και δραστηριοτήτων</li>
+                        <li>Ανάδειξη Οδοντωτού, Βουραϊκού, παραλιών, χωριών και πολιτισμού</li>
+                        <li>Marketplace / eShop για τοπικά προϊόντα και συνεργαζόμενους παραγωγούς</li>
+                        <li>Πλατφόρμα συνεργασιών, χορηγιών και κοινών καμπανιών</li>
+                    </ul>
+                </div>
+                <div class="about-image fade-up">
+                    <img src="assets/images/discover-diakopto-digital-hub.jpg" alt="Discover Diakopto Digital Hub">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="promotes" class="bg-warm">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Τι θα Προβάλλει το Discover Diakopto</h2>
+                <p class="section-subtitle">Μια πλήρης θεματική παρουσίαση του τόπου, σχεδιασμένη για τουρισμό,
+                    πολιτισμό, επιχειρηματικότητα και πραγματική τοπική ανάπτυξη.</p>
+            </div>
+
+            <div class="showcase-grid fade-up">
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-odontotos.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Οδοντωτός Σιδηρόδρομος</h4>
+                        <p>Προβολή της ιστορικής διαδρομής Διακοπτό - Καλάβρυτα, με οδηγούς επίσκεψης, φωτογραφικό
+                            υλικό, προτάσεις εμπειρίας και σύνδεση με το odontotos.gr.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-vouraikos.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Φαράγγι Βουραϊκού</h4>
+                        <p>Ανάδειξη της φυσικής ομορφιάς, των διαδρομών, της πεζοπορίας, της φωτογραφίας, της οικολογίας
+                            και του εναλλακτικού τουρισμού μέσα από το vouraikos.gr.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-beaches.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Παραλίες & Θάλασσα</h4>
+                        <p>Παραλιακά σημεία, οικογενειακές επιλογές, καλοκαιρινές εμπειρίες, beach bars, δραστηριότητες,
+                            φωτογραφίες και προτάσεις για επισκέπτες.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-villages.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Χωριά & Τοπικές Διαδρομές</h4>
+                        <p>Παρουσίαση κοντινών χωριών, μικρών διαδρομών, σημείων θέας, παραδοσιακών καφενείων και
+                            αυθεντικών στάσεων που κρατούν τον επισκέπτη στην περιοχή.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-food.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Γαστρονομία & Εστίαση</h4>
+                        <p>Ταβέρνες, εστιατόρια, καφέ, ζαχαροπλαστεία, τοπικές γεύσεις, μενού, προτάσεις ανά περίσταση
+                            και premium παρουσιάσεις συνεργαζόμενων επιχειρήσεων.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-hotels.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Διαμονή & Φιλοξενία</h4>
+                        <p>Ξενοδοχεία, ξενώνες, ενοικιαζόμενα δωμάτια, βίλες και καταλύματα με δυνατότητα προφίλ,
+                            φωτογραφιών, παροχών, χαρτών και απευθείας επικοινωνίας.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-products.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Τοπικά Προϊόντα</h4>
+                        <p>Ελαιόλαδο, κρασί, μέλι, σταφίδα, παραδοσιακά προϊόντα, χειροποίητες δημιουργίες και παραγωγοί
+                            με προοπτική συμμετοχής σε κοινό marketplace.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-culture.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Πολιτισμός & Εκδηλώσεις</h4>
+                        <p>Τοπικές δράσεις, σύλλογοι, πανηγύρια, πολιτιστικά δρώμενα, ιστορικές αναφορές, μύθοι,
+                            αφιερώματα και ημερολόγιο εκδηλώσεων.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-religious.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Θρησκευτικός Τουρισμός</h4>
+                        <p>Μοναστήρια, εκκλησίες, προσκυνηματικοί προορισμοί, διαδρομές πίστης και σύνδεση με την
+                            ιστορία της Αχαΐας και των Καλαβρύτων.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img"
+                        style="background-image: url('assets/images/placeholder-activities.jpg');"></div>
+                    <div class="showcase-content">
+                        <h4>Εμπειρίες & Δραστηριότητες</h4>
+                        <p>Πεζοπορία, ποδηλασία, φωτογραφικές εξορμήσεις, οικογενειακές δραστηριότητες, θεματικές
+                            διαδρομές και προτεινόμενα mini itineraries.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-business.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Τοπικές Επιχειρήσεις</h4>
+                        <p>Οδηγός επαγγελματιών και υπηρεσιών, από τουρισμό και λιανική μέχρι τεχνικές υπηρεσίες, με
+                            οργανωμένη παρουσίαση και δυνατότητες προώθησης.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img" style="background-image: url('assets/images/placeholder-stories.jpg');">
+                    </div>
+                    <div class="showcase-content">
+                        <h4>Ιστορίες του Τόπου</h4>
+                        <p>Ανθρώπινες ιστορίες, συνεντεύξεις, αφιερώματα σε ανθρώπους, παραγωγούς, επιχειρηματίες και
+                            προσωπικότητες που κρατούν ζωντανή την περιοχή.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ecosystem">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Η Ψηφιακή Ταυτότητα του Οικοσυστήματος</h2>
+                <p class="section-subtitle">Ένα δίκτυο από θεματικά domains και projects που ενισχύει την
+                    αναγνωρισιμότητα της περιοχής και δημιουργεί περισσότερες πύλες εισόδου για επισκέπτες, συνεργάτες
+                    και χορηγούς.</p>
+            </div>
+
+            <div class="domains-grid fade-up">
+                <div class="domain-card">
+                    <h4>discoverdiakopto.gr</h4>
+                    <p>Κεντρικός τουριστικός οδηγός και hub συνεργασιών.</p>
+                </div>
+                <div class="domain-card">
+                    <h4>visit-diakopto.gr</h4>
+                    <p>Καμπάνιες επισκεψιμότητας, social landing pages και προωθητικές ενέργειες.</p>
+                </div>
+                <div class="domain-card">
+                    <h4>odontotos.gr</h4>
+                    <p>Εξειδικευμένο project για τον Οδοντωτό και τη μοναδική του εμπειρία.</p>
+                </div>
+                <div class="domain-card">
+                    <h4>vouraikos.gr</h4>
+                    <p>Ανάδειξη του φαραγγιού, της φύσης, των διαδρομών και του εναλλακτικού τουρισμού.</p>
+                </div>
+                <div class="domain-card">
+                    <h4>digitalachaia.gr</h4>
+                    <p>Ομπρέλα προβολής για πολιτιστικά και τουριστικά projects της Αχαΐας.</p>
+                </div>
+                <div class="domain-card">
+                    <h4>webhostpro.gr</h4>
+                    <p>Τεχνική υλοποίηση, φιλοξενία, ανάπτυξη, διαχείριση και digital marketing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pillars" class="bg-white">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Οι Πυλώνες του Οικοσυστήματος</h2>
+                <p class="section-subtitle">Τρεις βασικοί άξονες που δημιουργούν αξία για επισκέπτες, επιχειρήσεις,
+                    παραγωγούς, φορείς και χορηγούς.</p>
+            </div>
+
+            <div class="pillars-grid fade-up">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🗺️</div>
+                    <h4>Τουριστικός Οδηγός</h4>
+                    <p>Πλήρης παρουσίαση αξιοθέατων, παραλιών, διαδρομών, δραστηριοτήτων, πολιτισμού και προτάσεων
+                        επίσκεψης. Ο επισκέπτης βρίσκει οργανωμένα όσα χρειάζεται για να ζήσει την περιοχή.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🏪</div>
+                    <h4>Business Directory</h4>
+                    <p>Αναλυτικός οδηγός επιχειρήσεων με premium προφίλ, φωτογραφίες, περιγραφή υπηρεσιών, χάρτη,
+                        στοιχεία επικοινωνίας, social links, άρθρα προβολής και προωθητικές καμπάνιες.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🛍️</div>
+                    <h4>Κοινοπραξία eShop</h4>
+                    <p>Marketplace τοπικών προϊόντων και συνεργαζόμενων παραγωγών. Δημιουργία ενός κοινού ψηφιακού
+                        ραφιού που προωθεί την τοπική παραγωγή σε επισκέπτες και online κοινό.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="marketplace">
+        <div class="container">
+            <div class="about-grid" style="direction: rtl;">
+                <div class="about-content fade-up" style="direction: ltr;">
+                    <div class="hero-badge" style="color: var(--primary); border-color: var(--primary);">Marketplace
+                        Τοπικών Προϊόντων</div>
+                    <h3>Από την επίσκεψη στην αγορά: ο τόπος συνεχίζει να ταξιδεύει.</h3>
+                    <p>Το Discover Diakopto μπορεί να εξελιχθεί σε μια πρακτική κοινοπραξία eShop, όπου τοπικοί
+                        παραγωγοί, μικρές επιχειρήσεις και δημιουργοί θα αποκτούν ένα κοινό premium σημείο προβολής και
+                        πώλησης.</p>
+                    <p>Το μοντέλο αυτό δεν περιορίζεται στην απλή καταχώρηση προϊόντων. Δημιουργεί ιστορίες γύρω από
+                        κάθε παραγωγό, συνδέει το προϊόν με τον τόπο και δίνει στον επισκέπτη λόγο να αγοράσει ξανά,
+                        ακόμη και αφού φύγει από την περιοχή.</p>
+
+                    <div class="highlight-strip">
+                        <div class="highlight-item"><strong>Προϊόν</strong><span>Παρουσίαση με εικόνες, ιστορία και
+                                προέλευση.</span></div>
+                        <div class="highlight-item"><strong>Παραγωγός</strong><span>Προφίλ, branding και
+                                αξιοπιστία.</span></div>
+                        <div class="highlight-item"><strong>Πώληση</strong><span>Online παραγγελίες και κοινές
+                                προωθήσεις.</span></div>
+                        <div class="highlight-item"><strong>Εξωστρέφεια</strong><span>Σύνδεση τοπικής παραγωγής με
+                                τουρισμό.</span></div>
+                    </div>
+                </div>
+                <div class="about-image fade-up" style="direction: ltr;">
+                    <img src="assets/images/alexa_topika-proionta.webp" alt="Τοπικά Προϊόντα Αιγιάλειας">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dining" class="bg-white">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content fade-up">
+                    <div class="hero-badge" style="color: var(--primary); border-color: var(--primary);">Γεύσεις &
+                        Εστίαση</div>
+                    <h3>Η γαστρονομία γίνεται εμπειρία και λόγος επίσκεψης.</h3>
+                    <p>Το Discover Diakopto θα προβάλλει οργανωμένα τις επιλογές εστίασης της περιοχής: παραθαλάσσιες
+                        ταβέρνες, εστιατόρια, καφέ, ζαχαροπλαστεία, παραδοσιακά στέκια και επιχειρήσεις που στηρίζουν
+                        την τοπική γεύση.</p>
+                    <p>Κάθε συνεργαζόμενη επιχείρηση μπορεί να αποκτήσει δικό της προφίλ, φωτογραφική παρουσίαση,
+                        προτεινόμενα πιάτα, σύνδεση με χάρτη, στοιχεία επικοινωνίας, social links και συμμετοχή σε
+                        θεματικές καμπάνιες όπως «Γεύσεις του Διακοπτού».</p>
+                </div>
+                <div class="about-image fade-up">
+                    <img src="assets/images/dining.png" alt="Εστιατόρια και Ταβέρνες στο Διακοπτό">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="accommodation">
+        <div class="container">
+            <div class="about-grid" style="direction: rtl;">
+                <div class="about-content fade-up" style="direction: ltr;">
+                    <div class="hero-badge" style="color: var(--primary); border-color: var(--primary);">Διαμονή &
+                        Φιλοξενία</div>
+                    <h3>Ο επισκέπτης βρίσκει πού να μείνει και γιατί να μείνει περισσότερο.</h3>
+                    <p>Το project θα αναδεικνύει ξενοδοχεία, ξενώνες, ενοικιαζόμενα δωμάτια, βίλες και παραδοσιακά
+                        καταλύματα, παρουσιάζοντας όχι μόνο τις παροχές τους αλλά και τη συνολική εμπειρία που
+                        προσφέρουν.</p>
+                    <p>Η προβολή μπορεί να συνδέεται με προτάσεις διαδρομών, πακέτα εμπειριών, θεματικές σελίδες,
+                        εποχικές καμπάνιες και συνεργασίες με εστίαση, δραστηριότητες και τοπικά προϊόντα.</p>
+                </div>
+                <div class="about-image fade-up" style="direction: ltr;">
+                    <img src="assets/images/accommodation.png" alt="Διαμονή και Ξενοδοχεία στο Διακοπτό">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="attractions" class="bg-white">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content fade-up">
+                    <div class="hero-badge" style="color: var(--primary); border-color: var(--primary);">Αξιοθέατα &
+                        Δραστηριότητες</div>
+                    <h3>Το Διακοπτό ως αφετηρία για εμπειρίες όλο τον χρόνο.</h3>
+                    <p>Η περιοχή δεν είναι μόνο καλοκαιρινός προορισμός. Μέσα από το Discover Diakopto θα αναδειχθούν
+                        προτάσεις για φυσιολατρικό, οικογενειακό, θρησκευτικό, πολιτιστικό, γαστρονομικό και εναλλακτικό
+                        τουρισμό.</p>
+                    <p>Ο Οδοντωτός, ο Βουραϊκός, τα κοντινά χωριά, οι παραλίες, τα μοναστήρια, τα μονοπάτια και οι
+                        μικρές αυθεντικές ιστορίες της περιοχής θα παρουσιαστούν με περιεχόμενο που μπορεί να σταθεί σε
+                        Google, social media και καμπάνιες χορηγών.</p>
+                </div>
+                <div class="about-image fade-up">
+                    <img src="assets/images/attractions.png" alt="Αξιοθέατα και Οδοντωτός Βουραϊκού">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="audience" class="bg-warm">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Σε ποιους απευθύνεται</h2>
+                <p class="section-subtitle">Το Discover Diakopto είναι ταυτόχρονα εργαλείο ενημέρωσης, προβολής, πώλησης
+                    και τοπικής δικτύωσης.</p>
+            </div>
+
+            <div class="pillars-grid fade-up">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🎒</div>
+                    <h4>Επισκέπτες & Τουρίστες</h4>
+                    <p>Έχουν σε ένα σημείο πληροφορίες για διαμονή, φαγητό, διαδρομές, αξιοθέατα, δραστηριότητες, τοπικά
+                        προϊόντα και προτάσεις για ολοκληρωμένη εμπειρία.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🤝</div>
+                    <h4>Επιχειρήσεις & Φορείς</h4>
+                    <p>Αποκτούν οργανωμένη ψηφιακή προβολή, συμμετοχή σε καμπάνιες, δυνατότητα συνεργασιών και παρουσία
+                        μέσα σε ένα ενιαίο τοπικό brand.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">⭐</div>
+                    <h4>Χορηγοί & Υποστηρικτές</h4>
+                    <p>Συνδέουν το brand τους με την ανάπτυξη, τον πολιτισμό, τον τουρισμό και τη βιώσιμη προβολή ενός
+                        τόπου με ισχυρή ταυτότητα.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="capabilities">
+        <div class="container">
+            <div class="capabilities-wrapper fade-up">
+                <div class="section-header" style="margin-bottom: 2rem;">
+                    <h2 class="section-title">Δυνατότητες & Οφέλη</h2>
+                    <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Ένα οικοσύστημα σχεδιασμένο να
+                        προσφέρει προστιθέμενη αξία σε κάθε πλευρά της συνεργασίας.</p>
+                </div>
+
+                <div class="cap-grid">
+                    <div class="cap-item">
+                        <h4>👩‍🌾 Για Παραγωγούς</h4>
+                        <ul>
+                            <li>Premium παρουσίαση προϊόντων και ιστορίας παραγωγού</li>
+                            <li>Συμμετοχή σε κοινό eShop / marketplace</li>
+                            <li>Κοινές προωθητικές ενέργειες και εποχικές καμπάνιες</li>
+                            <li>Μείωση ατομικού κόστους marketing</li>
+                            <li>Σύνδεση προϊόντος με τουριστική εμπειρία</li>
+                        </ul>
+                    </div>
+                    <div class="cap-item">
+                        <h4>🏪 Για Επιχειρήσεις</h4>
+                        <ul>
+                            <li>Στοχευμένη προβολή σε επισκέπτες και ντόπιους</li>
+                            <li>Προφίλ επιχείρησης με φωτογραφίες, χάρτη και CTA</li>
+                            <li>Συμμετοχή σε θεματικά άρθρα και social campaigns</li>
+                            <li>Αύξηση απευθείας επικοινωνίας και κρατήσεων</li>
+                            <li>Ενίσχυση brand awareness μέσα σε τοπικό ecosystem</li>
+                        </ul>
+                    </div>
+                    <div class="cap-item">
+                        <h4>🎯 Για Χορηγούς</h4>
+                        <ul>
+                            <li>Σύνδεση με τουρισμό, πολιτισμό και τοπική ανάπτυξη</li>
+                            <li>Brand visibility σε site, social, άρθρα και καμπάνιες</li>
+                            <li>Δυνατότητα θεματικής χορηγίας ανά ενότητα</li>
+                            <li>Περιεχόμενο υψηλής αισθητικής για δημόσια προβολή</li>
+                            <li>Συμμετοχή σε project με μακροπρόθεσμο αποτύπωμα</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsors" class="bg-white">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Προτάσεις Συνεργασίας & Χορηγίας</h2>
+                <p class="section-subtitle">Ενδεικτικά επίπεδα συνεργασίας που μπορούν να προσαρμοστούν ανάλογα με τον
+                    χορηγό, τον κλάδο, τη διάρκεια και τους στόχους της καμπάνιας.</p>
+            </div>
+
+            <div class="sponsor-grid fade-up">
+                <div class="sponsor-card">
+                    <span class="sponsor-tag">Basic Partner</span>
+                    <h4>Τοπική Παρουσία</h4>
+                    <p>Ιδανικό για επιχειρήσεις που θέλουν να μπουν οργανωμένα στον οδηγό.</p>
+                    <ul>
+                        <li>Προφίλ επιχείρησης</li>
+                        <li>Φωτογραφίες & περιγραφή</li>
+                        <li>Χάρτης και στοιχεία επικοινωνίας</li>
+                        <li>Σύνδεση με social media</li>
+                    </ul>
+                </div>
+
+                <div class="sponsor-card featured">
+                    <span class="sponsor-tag">Featured Partner</span>
+                    <h4>Ενισχυμένη Προβολή</h4>
+                    <p>Για επιχειρήσεις που θέλουν μεγαλύτερη ορατότητα σε τουρίστες και κοινό.</p>
+                    <ul>
+                        <li>Featured listing σε σχετική κατηγορία</li>
+                        <li>Αφιέρωμα / advertorial άρθρο</li>
+                        <li>Προβολή σε social posts</li>
+                        <li>Συμμετοχή σε θεματικές καμπάνιες</li>
+                    </ul>
+                </div>
+
+                <div class="sponsor-card featured">
+                    <span class="sponsor-tag">Premium Sponsor</span>
+                    <h4>Θεματική Χορηγία</h4>
+                    <p>Για brands που θέλουν να συνδεθούν με συγκεκριμένη ενότητα του project.</p>
+                    <ul>
+                        <li>Χορηγία ενότητας π.χ. Γεύσεις, Διαμονή, Βουραϊκός</li>
+                        <li>Logo placement σε επιλεγμένες σελίδες</li>
+                        <li>Σειρά άρθρων και social περιεχομένου</li>
+                        <li>Προβολή σε newsletter / καμπάνιες</li>
+                    </ul>
+                </div>
+
+                <div class="sponsor-card">
+                    <span class="sponsor-tag">Strategic Sponsor</span>
+                    <h4>Κεντρική Συνεργασία</h4>
+                    <p>Για φορείς, μεγάλες εταιρείες ή brands που θέλουν δυνατή σύνδεση με την ανάπτυξη της περιοχής.
+                    </p>
+                    <ul>
+                        <li>Κεντρική παρουσία στο project</li>
+                        <li>Συν-δημιουργία καμπάνιας</li>
+                        <li>Προτεραιότητα σε δράσεις και events</li>
+                        <li>Ετήσιο πλάνο προβολής</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="deliverables">
+        <div class="container">
+            <div class="capabilities-wrapper fade-up">
+                <div class="section-header" style="margin-bottom: 2rem;">
+                    <h2 class="section-title">Τι μπορεί να περιλαμβάνει μια χορηγία</h2>
+                    <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Η συνεργασία δεν μένει σε ένα απλό
+                        λογότυπο. Μπορεί να γίνει ολοκληρωμένη καμπάνια προβολής με περιεχόμενο, αισθητική και συνέπεια.
+                    </p>
+                </div>
+
+                <div class="deliverables-grid">
+                    <div class="deliverable-card">
+                        <h4>Brand Visibility</h4>
+                        <p>Λογότυπο σε επιλεγμένες σελίδες, αναφορές χορηγού, banner spots, σύνδεση με θεματικές
+                            ενότητες και σταθερή παρουσία στο ecosystem.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <h4>Content Marketing</h4>
+                        <p>Άρθρα, αφιερώματα, storytelling, φωτογραφικό υλικό, παρουσιάσεις επιχειρήσεων, προτάσεις
+                            εμπειριών και περιεχόμενο για social media.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <h4>Social Media Campaigns</h4>
+                        <p>Σειρές αναρτήσεων, reels, carousel posts, community engagement, διαγωνισμοί, καμπάνιες ανά
+                            εποχή και προώθηση δράσεων.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <h4>Local SEO</h4>
+                        <p>Θεματικές σελίδες που μπορούν να στοχεύουν σε αναζητήσεις για Διακοπτό, Οδοντωτό, Βουραϊκό,
+                            διαμονή, φαγητό, παραλίες και δραστηριότητες.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <h4>Marketplace Integration</h4>
+                        <p>Προβολή προϊόντων, παραγωγών, ειδικών πακέτων, δώρων, συνεργασιών και εποχικών συλλογών μέσα
+                            από το eShop οικοσύστημα.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <h4>Reporting & Feedback</h4>
+                        <p>Ενδεικτικές αναφορές απόδοσης καμπανιών, επισκεψιμότητας, αλληλεπίδρασης και προτάσεις
+                            βελτίωσης για κάθε συνεργαζόμενο brand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="strategy" class="bg-white">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Στρατηγική & Βιωσιμότητα</h2>
+                <p class="section-subtitle">Ένα αναπτυξιακό μοντέλο που δεν βασίζεται σε μία πηγή εσόδων, αλλά σε
+                    συνδυασμό υπηρεσιών, προβολής, συνεργασιών και marketplace.</p>
+            </div>
+
+            <div class="strategy-grid fade-up">
+                <div class="strategy-box">
+                    <h3>📈 Πηγές Εσόδων</h3>
+                    <p>Το Discover Diakopto μπορεί να στηριχθεί σε πολλαπλές ροές εσόδων, ώστε να είναι βιώσιμο και να
+                        εξελίσσεται συνεχώς.</p>
+                    <ul class="feature-list" style="margin-top: 1rem;">
+                        <li>Συνδρομές επιχειρήσεων για premium προβολή</li>
+                        <li>Προμήθειες από marketplace / eShop τοπικών προϊόντων</li>
+                        <li>Χορηγίες σε θεματικές ενότητες και καμπάνιες</li>
+                        <li>Διαφημιστικά placements, banners και advertorials</li>
+                        <li>Πακέτα social media προβολής για συνεργάτες</li>
+                        <li>Affiliate συνεργασίες με tours, κρατήσεις, μεταφορές ή εμπειρίες</li>
+                        <li>Δημιουργία custom landing pages για εποχικές δράσεις</li>
+                    </ul>
+                </div>
+                <div class="strategy-box gold-border">
+                    <h3>🚀 Στρατηγική Ανάπτυξης</h3>
+                    <p>Το project μπορεί να αναπτυχθεί σταδιακά, με οργανωμένη δομή και καθαρή εμπορική λογική.</p>
+                    <ul class="feature-list" style="margin-top: 1rem;">
+                        <li><strong>Φάση 1:</strong> Λανσάρισμα βασικού οδηγού, αρχικό περιεχόμενο και SEO βάση.</li>
+                        <li><strong>Φάση 2:</strong> Ένταξη επιχειρήσεων, παραγωγών και πρώτων χορηγών.</li>
+                        <li><strong>Φάση 3:</strong> Ενεργοποίηση marketplace και θεματικών καμπανιών.</li>
+                        <li><strong>Φάση 4:</strong> Ανάπτυξη newsletter, community, loyalty και mobile-first εμπειριών.
+                        </li>
+                        <li><strong>Φάση 5:</strong> Επέκταση σε Digital Achaia με περισσότερα projects ανά περιοχή.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="bg-warm">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Ενδεικτικός Οδικός Χάρτης</h2>
+                <p class="section-subtitle">Μια καθαρή πορεία εξέλιξης που επιτρέπει στους συνεργάτες και χορηγούς να
+                    μπουν από νωρίς στο οικοσύστημα.</p>
+            </div>
+
+            <div class="timeline fade-up">
+                <div class="timeline-card">
+                    <span>1</span>
+                    <h4>Βασική Δομή</h4>
+                    <p>Σελίδες οδηγού, κατηγορίες, αρχικό περιεχόμενο, φωτογραφίες, SEO βάση και τεχνική οργάνωση.</p>
+                </div>
+                <div class="timeline-card">
+                    <span>2</span>
+                    <h4>Τοπικές Συνεργασίες</h4>
+                    <p>Πρώτα προφίλ επιχειρήσεων, παραγωγών, φορέων, συλλόγων και συνεργατών για χτίσιμο αξιοπιστίας.
+                    </p>
+                </div>
+                <div class="timeline-card">
+                    <span>3</span>
+                    <h4>Καμπάνιες Προβολής</h4>
+                    <p>Social media, Google Business posts, άρθρα, reels, διαγωνισμοί, θεματικά αφιερώματα και seasonal
+                        προτάσεις.</p>
+                </div>
+                <div class="timeline-card">
+                    <span>4</span>
+                    <h4>Marketplace & Expansion</h4>
+                    <p>eShop τοπικών προϊόντων, νέα θεματικά projects, Digital Achaia επέκταση και δυνατότητες
+                        εφαρμογής.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why" class="bg-white">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content fade-up">
+                    <div class="hero-badge" style="color: var(--primary); border-color: var(--primary);">Γιατί να
+                        συμμετέχει κάποιος τώρα</div>
+                    <h3>Οι πρώτοι συνεργάτες χτίζουν μαζί μας την ταυτότητα του project.</h3>
+                    <p>Η αρχική φάση είναι η πιο σημαντική, γιατί διαμορφώνει την εικόνα, το ύφος και τις πρώτες
+                        συνεργασίες του οικοσυστήματος. Οι επιχειρήσεις και οι χορηγοί που συμμετέχουν από νωρίς μπορούν
+                        να αποκτήσουν πιο δυνατή θέση, καλύτερη προβολή και μεγαλύτερη σύνδεση με την ιστορία του
+                        project.</p>
+                    <p>Το Discover Diakopto δεν προβάλλει απλώς επιχειρήσεις. Χτίζει ένα αφήγημα για τον τόπο: θάλασσα,
+                        βουνό, διαδρομές, γεύσεις, φιλοξενία, ιστορία, άνθρωποι και παραγωγή κάτω από μια ενιαία ψηφιακή
+                        ταυτότητα.</p>
+
+                    <ul class="feature-list">
+                        <li>Πρώιμη τοποθέτηση σε ένα αναπτυσσόμενο τοπικό brand</li>
+                        <li>Συμμετοχή σε περιεχόμενο που θα δουλεύει μακροπρόθεσμα</li>
+                        <li>Δυνατότητα δημιουργίας αποκλειστικών πακέτων συνεργασίας</li>
+                        <li>Σύνδεση με Web Host Pro, Digital Achaia, Odontotos και Vouraikos projects</li>
+                    </ul>
+                </div>
+                <div class="about-image fade-up">
+                    <img src="assets/images/placeholder-sponsorship.jpg"
+                        alt="Συνεργασίες και Χορηγίες Discover Diakopto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section fade-up">
+        <div class="container">
+            <h2>Γίνετε Μέρος της Εξέλιξης</h2>
+            <p>Το Discover Diakopto αναζητά στρατηγικούς συνεργάτες, επιχειρήσεις, παραγωγούς, φορείς και χορηγούς για
+                να συνδημιουργήσουμε μια νέα ψηφιακή εικόνα για το Διακοπτό και την Αιγιάλεια.</p>
+
+            <div class="contact-box">
+                <span><strong>Web Host Pro Aigialeia</strong> / Digital Achaia Ecosystem</span>
+                <span>Email: info@webhostpro.gr / info@digitalachaia.gr</span>
+                <span>Τηλ.: +30 6955236006 / +30 6984138488</span>
+                <span>Περιοχή: Διακοπτό, Αιγιάλεια, Αχαΐα</span>
+            </div>
+
+            <div class="hero-actions" style="justify-content: center;">
+                <a href="mailto:info@webhostpro.gr?subject=Συνεργασία / Χορηγία για Discover Diakopto"
+                    class="btn btn-primary" style="font-size: 1.05rem; padding: 1.2rem 2.4rem;">Συζητήστε Μαζί Μας</a>
+                <a href="https://discoverdiakopto.gr" class="btn btn-outline"
+                    style="font-size: 1.05rem; padding: 1.2rem 2.4rem;">Επισκεφθείτε το Project</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Discover<span>Diakopto</span></div>
+            <p style="margin-bottom: 1rem;">Το ολοκληρωμένο ψηφιακό οικοσύστημα για το Διακοπτό, τον Οδοντωτό, τον
+                Βουραϊκό και την τοπική ανάπτυξη.</p>
+
+            <div class="footer-links">
+                <a href="https://discoverdiakopto.gr">discoverdiakopto.gr</a>
+                <a href="https://visit-diakopto.gr">visit-diakopto.gr</a>
+                <a href="https://odontotos.gr">odontotos.gr</a>
+                <a href="https://vouraikos.gr">vouraikos.gr</a>
+                <a href="https://digitalachaia.gr">digitalachaia.gr</a>
+                <a href="https://webhostpro.gr">webhostpro.gr</a>
+            </div>
+
+            <p>Powered by Web Host Pro Aigialeia & Digital Achaia.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2026 Discover Diakopto. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
